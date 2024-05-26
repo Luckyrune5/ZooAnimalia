@@ -1,26 +1,27 @@
 {
   "name": "ZooAnimalia",
-"version": "1.0.0",
-"private": true,
-"scripts": {
-  "build": "npm install",
-  "start": "ts-node index.ts"
-},
-    "dependencies": {
-      "bcrypt": "^5.1.1",
-      "connect-mongodb-session": "^5.0.0",
-      "dotenv": "^16.4.5",
-      "ejs": "^3.1.10",
-      "express": "^4.19.2",
-      "express-session": "^1.18.0",
-      "mongodb": "^6.6.2"
-    },
-    "devDependencies": {
-      "@types/bcrypt": "^5.0.2",
-      "@types/connect-mongodb-session": "^2.4.7",
-      "@types/ejs": "^3.1.5",
-      "@types/express": "^4.17.21",
-      "@types/express-session": "^1.18.0"
-    }
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm install",
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/connect-mongodb-session": "^2.4.7",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
-  
+}
