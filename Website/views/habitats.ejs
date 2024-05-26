@@ -1,17 +1,19 @@
 <%- include("partials/header") %>
 <%- include("partials/nav") %>
-<table>
+
+<div class=" row table-responsive">
+<table class="table">
     <thead>
-        <th>id</th>
-        <th>image</th>
-        <th>name</th>
-        <th>location</th>
-        <th>area</th>
-        <th>water feature</th>
+        <th scope="col">id</th>
+        <th scope="col">image</th>
+        <th scope="col">name</th>
+        <th scope="col">location</th>
+        <th scope="col">area</th>
+        <th scope="col">water feature</th>
     </thead>
     <% for (let habitat of allHabitats) { %>
         <tr>
-            <td><%= habitat.id%></td>
+            <td scope="row"><%= habitat.id%></td>
             <td><img width="100px" src="<%= habitat.imageHabitat%>" alt=""></td>
             <td><%= habitat.name%></td>
             <td><%= habitat.location%></td>
@@ -21,4 +23,5 @@
         </tr>
     <% } %>
 </table>
+</div>
 <%- include("partials/footer") %>

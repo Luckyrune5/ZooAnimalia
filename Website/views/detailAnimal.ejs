@@ -1,19 +1,24 @@
 <%- include("partials/header") %>
 <%- include("partials/nav") %>
 <% if (user.role === 'ADMIN') { %>
-  <button><a href="/edit/<%= animal.id%>">edit</a></button> <% } %>
-<h1><%= animal.name %></h1>      
-<img src="<%= animal.imageUrl %>" alt="<%= animal.name %>" width="300">
+<div class="row col-4 col-lg-4 offset-lg-4 mt-5 border rounded border-black p-3 grid">
+  <div class="row mb-3 mt-3">
+  
+<h1 class="col-auto col-lg-6"><%= animal.name %></h1>
+<button class="col-auto btn btn-sm btn-outline-dark m-2"><a class="text-reset text-decoration-none" href="/edit/<%= animal.id%>">edit</a></button> <% } %> 
+</div>
+<img class="img col-4" src="<%= animal.imageUrl %>" alt="<%= animal.name %>" max-width="100px">
 <p><%= animal.description %></p>
-<ul>
-  <li>ID: <%= animal.id %></li>
-  <li>Age: <%= animal.age %></li>
-  <li>Gender: <%= animal.gender %></li>
-  <li>Endangered: <%= animal.isEndangered %></li>
-  <li>Birth Date: <%= new Date(animal.birthDate).toLocaleDateString() %></li>
-  <li>Species: <%= animal.species %></li>
-  <li>Food: <%= animal.food.join(', ') %></li>
-  <li><a href="/detailHabitat/<%= animal.habitat.id%>"><%= animal.habitat.name%></a> (<%= animal.habitat.location %>)</li>
+<ul class="list-group">
+  <li class="list-group-item">ID: <%= animal.id %></li>
+  <li class="list-group-item">Age: <%= animal.age %></li>
+  <li class="list-group-item">Gender: <%= animal.gender %></li>
+  <li class="list-group-item">Endangered: <%= animal.isEndangered %></li>
+  <li class="list-group-item">Birth Date: <%= new Date(animal.birthDate).toLocaleDateString() %></li>
+  <li class="list-group-item" class="list-group-item">Species: <%= animal.species %></li>
+  <li class="list-group-item">Food: <%= animal.food.join(', ') %></li>
+  <li class="list-group-item"><a href="/detailHabitat/<%= animal.habitat.id%>"><%= animal.habitat.name%></a> (<%= animal.habitat.location %>)</li>
 </ul>
-<a href="/">Back to list</a>
+<a href="/">Back to animals</a>
+</div>
 <%- include("partials/footer") %>

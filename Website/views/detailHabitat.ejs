@@ -1,20 +1,22 @@
 <%- include("partials/header") %>
 <%- include("partials/nav") %>
+<div class="row col-sm-4 col-lg-4 offset-lg-4 mt-5 border rounded border-black p-3 grid">
 <h1><%= habitat.name %></h1>
-<img src="<%= habitat.imageHabitat %>" alt="<%= habitat.name %>" width="300">
+<img class="img col-6" src="<%= habitat.imageHabitat %>" alt="<%= habitat.name %>" width="300">
 <p>Location: <%= habitat.location %></p>
 <p>Area: <%= habitat.area %></p>
-<p>Does it have a water feature: <%= habitat.hasWaterFeature ? 'Yes' : 'No' %></p>
+<p>Does it have a water feature?: <%= habitat.hasWaterFeature ? 'Yes' : 'No' %></p>
 
 <h2>Animals in this Habitat</h2>
-<ul>
+<ul class="list-group">
     <% for (let animal of animals) { %>
-    <li>
+    <li  class="list-group-item">
         <a href="/detailAnimal/<%= animal.id%>"><%= animal.name %></a> - <%= animal.species %>
     </li>
   <% } %>
 </ul>
 
-<a href="/">Back to list</a>
+<a href="/habitats">Back to habitats</a>
+</div>
 <%- include("partials/footer") %>
 
