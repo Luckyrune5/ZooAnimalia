@@ -1,4 +1,10 @@
 {
+  "name": "ZooAnimalia",
+"version": "1.0.0",
+"private": true,
+"scripts": {
+  "build": "npm install",
+  "start": "ts-node index.ts"},
     "dependencies": {
       "bcrypt": "^5.1.1",
       "connect-mongodb-session": "^5.0.0",
