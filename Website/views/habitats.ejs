@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<table>
+    <thead>
+        <th>id</th>
+        <th>image</th>
+        <th>name</th>
+        <th>location</th>
+        <th>area</th>
+        <th>water feature</th>
+    </thead>
+    <% for (let habitat of allHabitats) { %>
+        <tr>
+            <td><%= habitat.id%></td>
+            <td><img width="100px" src="<%= habitat.imageHabitat%>" alt=""></td>
+            <td><%= habitat.name%></td>
+            <td><%= habitat.location%></td>
+            <td><%= habitat.area%></td>
+            <td><%= habitat.hasWaterFeature%></td>
+            <td><a href="/detailHabitat/<%= habitat.id%>"><img width="15px" src="assets/images/magnifier.png"></a></td>
+        </tr>
+    <% } %>
+</table>
+<%- include("partials/footer") %>

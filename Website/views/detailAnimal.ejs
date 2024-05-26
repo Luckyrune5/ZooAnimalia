@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<% if (user.role === 'ADMIN') { %>
+  <button><a href="/edit/<%= animal.id%>">edit</a></button> <% } %>
+<h1><%= animal.name %></h1>      
+<img src="<%= animal.imageUrl %>" alt="<%= animal.name %>" width="300">
+<p><%= animal.description %></p>
+<ul>
+  <li>ID: <%= animal.id %></li>
+  <li>Age: <%= animal.age %></li>
+  <li>Gender: <%= animal.gender %></li>
+  <li>Endangered: <%= animal.isEndangered %></li>
+  <li>Birth Date: <%= new Date(animal.birthDate).toLocaleDateString() %></li>
+  <li>Species: <%= animal.species %></li>
+  <li>Food: <%= animal.food.join(', ') %></li>
+  <li><a href="/detailHabitat/<%= animal.habitat.id%>"><%= animal.habitat.name%></a> (<%= animal.habitat.location %>)</li>
+</ul>
+<a href="/">Back to list</a>
+<%- include("partials/footer") %>

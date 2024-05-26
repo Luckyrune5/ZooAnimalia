@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<form class=" row m-2 p-1 mb-3" action="/" method="get">
+    <input class="col-4 m-1" type="text" id="search" name="q" placeholder="Search by name">
+    <button class="col-1 m-1 btn btn-sm btn-outline-dark" type="submit">Search</button>
+</form>
+
+
+<div class=" row table-responsive">
+<table class="table">
+    <thead>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=id&direction=<%= -direction %>&q=<%= q %>"># <img width="12px" src="assets/images/sort.png"></a></th> 
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=imageUrl&direction=<%= -direction %>&q=<%= q %>"></a></th>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=name&direction=<%= -direction %>&q=<%= q %>">Name <img width="12px" src="assets/images/sort.png"></a></th>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=age&direction=<%= -direction %>&q=<%= q %>">Age <img width="12px" src="assets/images/sort.png"></a></th>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=gender&direction=<%= -direction %>&q=<%= q %>">Gender <img width="12px" src="assets/images/sort.png"></a></th>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=species&direction=<%= -direction %>&q=<%= q %>">Species <img width="12px" src="assets/images/sort.png"></a></th>
+        <th scope="col"><a class="text-reset text-decoration-none" href="/?sortField=habitat&direction=<%= -direction %>&q=<%= q %>">Habitat <img width="12px" src="assets/images/sort.png"></a></th>
+        <th></th>
+    </thead>
+    <% for (let animal of allAnimals) { %>
+        <tr>
+            <th scope="row"><%= animal.id%></td>
+            <td><img width="100px" src="<%= animal.imageUrl%>" alt=""></td>
+            <td><%= animal.name%></td>
+            <td><%= animal.age%></td>
+            <td><%= animal.gender%></td>
+            <td><%= animal.species%></td>
+            <td><a href="/detailHabitat/<%= animal.habitat.id%>"><%= animal.habitat.name%></a></td>
+            <td><a href="/detailAnimal/<%= animal.id%>"><img width="15px" src="assets/images/magnifier.png"></a></td>
+        </tr>
+    <% } %>
+</table>
+</div>
+<%- include("partials/footer") %>

@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<h1><%= habitat.name %></h1>
+<img src="<%= habitat.imageHabitat %>" alt="<%= habitat.name %>" width="300">
+<p>Location: <%= habitat.location %></p>
+<p>Area: <%= habitat.area %></p>
+<p>Does it have a water feature: <%= habitat.hasWaterFeature ? 'Yes' : 'No' %></p>
+
+<h2>Animals in this Habitat</h2>
+<ul>
+    <% for (let animal of animals) { %>
+    <li>
+        <a href="/detailAnimal/<%= animal.id%>"><%= animal.name %></a> - <%= animal.species %>
+    </li>
+  <% } %>
+</ul>
+
+<a href="/">Back to list</a>
+<%- include("partials/footer") %>
+
